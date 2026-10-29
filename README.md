@@ -10,7 +10,7 @@
 | 클라우드 전환 기록 | 길 A(로컬 SQLite `todo.db`)에서 길 B(Supabase Postgres + Supabase Auth)로 전환했다. 화면은 백엔드 `/api`에만 요청하고 키는 백엔드 `.env`에서만 쓴다. |
 | RLS 확인 기록 | `todo` 표에 RLS를 켜고 계정 2개로 확인했다. B는 A의 할 일이 보이지 않고, 수정·삭제는 0건이며, A의 `user_id`로 위조해 추가하면 `row-level security policy` 위반(403)으로 거부되고, 로그인 없는 접근은 401이다. |
 | 상세 기록 | [SUBMISSION.md](SUBMISSION.md) |
-| 배포 URL | 없음 |
+| 배포 URL | https://todo-app-iw2l.onrender.com |
 
 ### 작동 화면
 

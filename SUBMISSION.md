@@ -44,4 +44,6 @@
 | 추가한 행의 소유자 | 로그인한 사용자 id가 `user_id`에 자동 저장됨 |
 
 ## 배포
-(배포에 성공하면 접속 URL을 여기에 적는다.)
+- 접속 URL: https://todo-app-iw2l.onrender.com
+- 플랫폼: Render (무료 플랜, `render.yaml`). 유휴 후 첫 접속은 30~60초 걸릴 수 있다.
+- 확인: 화면 200, 로그인 없이 `/api/todos` 401.
