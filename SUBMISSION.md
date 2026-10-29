@@ -1,5 +1,6 @@
 # 과제 제출: Todo 앱과 PRD
 
+- GitHub: https://github.com/castlegyun/todo-app
 - PRD: [PRD.md](PRD.md)
 - 코드: 이 저장소 (백엔드 `app.py`, 화면 `static/`, DB 설정 `supabase_schema.sql`)
 - 실행 방법: [README.md](README.md)
