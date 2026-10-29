@@ -2,6 +2,40 @@
 
 로그인한 사용자가 자기 할 일만 관리하는 앱입니다. 데이터는 Supabase(Postgres)에 저장됩니다.
 
+## 제출 요약
+
+| 항목 | 내용 |
+|---|---|
+| PRD | [PRD.md](PRD.md) (한 장) |
+| 클라우드 전환 기록 | 길 A(로컬 SQLite `todo.db`)에서 길 B(Supabase Postgres + Supabase Auth)로 전환했다. 화면은 백엔드 `/api`에만 요청하고 키는 백엔드 `.env`에서만 쓴다. |
+| RLS 확인 기록 | `todo` 표에 RLS를 켜고 계정 2개로 확인했다. B는 A의 할 일이 보이지 않고, 수정·삭제는 0건이며, A의 `user_id`로 위조해 추가하면 `row-level security policy` 위반(403)으로 거부되고, 로그인 없는 접근은 401이다. |
+| 상세 기록 | [SUBMISSION.md](SUBMISSION.md) |
+| 배포 URL | 없음 |
+
+### 작동 화면
+
+**로컬(SQLite)**: 추가·완료·삭제 동작, 서버를 껐다 켜도 데이터 유지 (로그인 기능을 넣기 전 버전)
+
+<img src="evidence/00-local-sqlite-ui.png" width="480" alt="로컬 SQLite 버전 화면">
+
+**클라우드(Supabase)**
+
+| 로그인 화면 | 할 일 목록 |
+|---|---|
+| <img src="evidence/01-login-screen.png" width="360" alt="로그인 화면"> | <img src="evidence/02-list.png" width="360" alt="할 일 목록"> |
+
+| 오늘 할 일만 보기 | 완료 체크 |
+|---|---|
+| <img src="evidence/03-today-filter.png" width="360" alt="오늘 필터"> | <img src="evidence/04-completed.png" width="360" alt="완료 체크"> |
+
+| 삭제 후 | 서버를 껐다 켠 뒤에도 데이터 유지 |
+|---|---|
+| <img src="evidence/05-deleted.png" width="360" alt="삭제 후"> | <img src="evidence/06-after-server-restart.png" width="360" alt="서버 재시작 후"> |
+
+**RLS 확인**: 다른 계정(B)으로 로그인하면 A의 할 일이 보이지 않는다.
+
+<img src="evidence/07-user-b-sees-nothing.png" width="480" alt="계정 B의 빈 목록">
+
 ## 기능
 - 회원가입 / 로그인 / 로그아웃 (Supabase Auth)
 - 할 일 추가 / 목록 / 완료 표시 / 삭제 (내 것만)
