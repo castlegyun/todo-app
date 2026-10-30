@@ -1,6 +1,6 @@
 # AIFFEL Campus Agent Code Review Templete
-- 개발자 : castlegyun
-- 리뷰어 : Rose Kim (k-im-rose)
+- 개발자 : 이성균
+- 리뷰어 : 김민지(k-im-rose)
 
 # ART(Agent Review Template)
 [o]  **1. 원하는 기능이 의도한 대로 동작하나요?**
